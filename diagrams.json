@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -191.7,
+      "left": -63,
+      "attrs": { "temperature": "39.5" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -109.2,
+      "left": 301.4,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-dht22", "id": "dht2", "top": -201.3, "left": -139.8, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 29, "left": 384, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -109.2,
+      "left": 349.4,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 0, "left": 354.6, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -8.84, "left": 528, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -61.2,
+      "left": 445.4,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "dht2:VCC", "uno:5V", "red", [ "v326.4", "h284.8" ] ],
+    [ "dht1:VCC", "uno:5V", "red", [ "v297.6", "h208" ] ],
+    [ "dht2:GND", "uno:GND.1", "black", [ "v57.6", "h211.5" ] ],
+    [ "dht1:GND", "uno:GND.1", "black", [ "v19.2", "h134.7" ] ],
+    [ "dht1:SDA", "uno:2", "green", [ "v38.4", "h275" ] ],
+    [ "dht2:SDA", "uno:3", "green", [ "v67.2", "h342.3" ] ],
+    [ "relay1:GND", "uno:GND.3", "black", [ "h-86.4", "v162.8", "h-118.6" ] ],
+    [ "relay1:VCC", "uno:5V", "red", [ "h-19.2", "v182.4", "h-204.8" ] ],
+    [ "relay1:IN", "uno:10", "gold", [ "h-57.6", "v-77", "h-172.9" ] ],
+    [ "uno:GND.1", "led1:C", "black", [ "v0" ] ],
+    [ "led1:A", "uno:10", "gold", [ "v9.6", "h-172.9" ] ],
+    [ "led2:C", "gnd1:GND", "black", [ "v0" ] ],
+    [ "vcc1:VCC", "relay1:COM", "red", [ "v0" ] ],
+    [ "led2:A", "relay1:NO", "red", [ "h201.6", "v136.2" ] ],
+    [ "led3:C", "gnd1:GND", "black", [ "v9.6", "h-239.6" ] ],
+    [ "led3:A", "relay1:NC", "red", [ "h48", "v68.4" ] ]
+  ],
+  "dependencies": {}
+}
