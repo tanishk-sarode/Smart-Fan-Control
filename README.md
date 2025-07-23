@@ -2,7 +2,8 @@
 
 This project simulates a dual-temperature-controlled fan system using two DHT22 sensors and a relay module. If the indoor temperature is less than outdoor, the fan turns ON to increase the indoor temperature.
 
-🔗 **Live Demo:** [Wokwi Project](https://wokwi.com/projects/378112823803002881)
+🔗 **Live Demo:** [Wokwi Project](https://wokwi.com/projects/437257181485293569)
+
 
 ## Features
 - Reads temperature and humidity from two DHT22 sensors
